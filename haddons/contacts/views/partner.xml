@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record model="ir.ui.view" id="contact_form_inherit">
+        <field name="name">contact.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="cni" attrs="{'invisible': [('type', '=', 'company')]}"/>
+            <field name="niu" attrs="{'invisible': [('type', '!=', 'company')], 'required': [('type', '=', 'company')]}"/>
+        </field>
+    </record>
+</odoo>
